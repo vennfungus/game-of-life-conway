@@ -126,19 +126,21 @@ class Grid:
 
         return g
 
-    def place(self, pattern: list[list[int]], top_left: tuple[int, int] = (0, 0)):
+    def place(self, pattern: list[list[int]], a0: int = 0, b0: int = 0):
         """
         Places a predefined pattern of alive cells onto the grid at the specified top-left position.
 
         Args:
             pattern (list[list[int]]): A 2D list representing the pattern to place (1 for alive, 0 for dead).
-            top_left (tuple[int, int]): The (row, column) coordinates of the top-left corner where the pattern will be placed.
+            a0 (int): The row coordinate of the top-left corner where the pattern will be placed.
+            b0 (int): The column coordinate of the top-left corner where the pattern will be placed.
         """
-        rows, cols = len(pattern), len(pattern[0])
-        start_row, start_col = top_left
-
+        rows = len(pattern)
+        cols = max(len(r) for r in pattern)  # handle ragged rows
+        start_row, start_col = a0, b0
         for i in range(rows):
-            for j in range(cols):
+            row_cols = len(pattern[i])
+            for j in range(row_cols):
                 if 0 <= start_row + i < self.rows and 0 <= start_col + j < self.cols:
                     self.set_alive(start_row + i, start_col + j, bool(pattern[i][j]))
 
