@@ -19,7 +19,24 @@ game-of-life-conway/
 │   ├── cell.py      # Class of Cell: living/dead of cell, rules of change next state
 │   └── grid.py      # Class of Grid: handling neighbors, step, place, random, RLE…
 ├── README.md
-├── requirements.txt
 └── .gitignore
 ```
 
+## Installation and Usage
+
+Because of the syntax already used `int | None`, this project requires Python == **3.10** or greater. 
+```bash
+git clone https://github.com/vennfungus/game-of-life-conway.git
+cd game-of-life
+```
+
+Since the used `requirements` is popular in Python (am implying numpy and matplotlib), I supposed to not build a `requirements.txt` file. But in the instance which is necessary, run the following command in bash.
+```bash
+pip install numpy matplotlib
+```
+
+## Roadmap in Future
+- Allowing create/t.toggle cell while running visualisation, by clicking on screen.
+- Export GIF/MP4
+- Strengthening with Hashlife
+- Randomly create input cells in the begin.
