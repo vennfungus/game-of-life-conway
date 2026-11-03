@@ -61,6 +61,16 @@ class Game:
 
         return ani
 
+    #----Check if the grid is all dead, or all still----#
+    def _diffcheck(self, prev_grid: np.ndarray) -> bool:
+        """Check if the current grid is the same as the previous grid."""
+        # First check if the grid cell numbers are not the same --> not all stills
+        if np.sum(self.grid.to_numpy()) != np.sum(prev_grid):
+            return False
+
+        # Then check if the grid is the same as the previous grid --> all stills
+        return np.array_equal(self.grid.to_numpy(), prev_grid)
+
 if __name__ == "__main__":
     # Example usage
     grid = Grid(rows=200, cols=200, toroidal=True)
