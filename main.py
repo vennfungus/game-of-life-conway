@@ -61,4 +61,10 @@ class Game:
 
         return ani
 
-
+if __name__ == "__main__":
+    # Example usage
+    grid = Grid(rows=200, cols=200, toroidal=True)
+    from src.randput import random_put
+    random_put(grid, alive_prob=0.6)  # Populate the grid with random alive cells
+    game = Game(grid, interval_ms=200)
+    game.run_visual(frames=100)  # Run the game visually for 100 frames

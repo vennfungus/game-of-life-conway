@@ -1,5 +1,5 @@
 # The Game of Life | Conway
-Game of Life is proposed in 1970, by a British mathematician John Horton Conway. The concept is using to visualise chaos concept, butterfly effect, and/or emergence, mainly.
+Game of Life is proposed in 1970, by a British mathematician John Horton Conway. The concept is using to visualise the chaos theory, the butterfly effect, and/or emergence, primarily.
 
 The concept is constructed with just only four simple principles:
 
